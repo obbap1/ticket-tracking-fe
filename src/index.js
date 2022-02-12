@@ -1,12 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Todo from './components/Todo'
+import Done from './components/Done'
+import styled from 'styled-components';
+
+
+const AppContainer = styled.div`
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+`
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <AppContainer>
+      <Todo/>
+      <Done/>
+    </AppContainer>
   </React.StrictMode>,
   document.getElementById('root')
 );
