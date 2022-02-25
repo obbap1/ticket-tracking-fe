@@ -1,16 +1,19 @@
-import Card from './Card'
-import Wrapper from './Wrapper'
+import React, { useState } from "react";
+import Card from "./Card";
+import Wrapper from "./Wrapper";
+import styled from "styled-components";
+import NewTask, { cards } from "./NewTask";
 
-const cards = [
-  {title: 'clean room'},
-  {title: 'clean house'},
-  {title: 'clean life'},
-  {title: 'eat food'},
-]
 function Todo() {
-  return <Wrapper heading="TODO">
-    {cards.length && cards.map((card, index) => <Card key={index} title={card.title}/>)}
-  </Wrapper>
+  const [card, newCards] = useState(cards);
+  return (
+    <Wrapper heading="TODO">
+      <NewTask />
+      {cards.length &&
+        cards.map((card, index) => <Card key={index} title={card.title} />)}
+      {console.log(cards.length)}
+    </Wrapper>
+  );
 }
 
-export default Todo
+export default Todo;
