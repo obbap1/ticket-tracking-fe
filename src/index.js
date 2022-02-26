@@ -8,7 +8,9 @@ import "./index.css"; //RiDeleteBin5Line
 
 const AppContainer = styled.div`
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
 
   @media all and (max-width: 768px) {
      {
@@ -19,11 +21,19 @@ const AppContainer = styled.div`
   }
 `;
 
+
+const TodoColumns = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+`
+
 ReactDOM.render(
   <React.StrictMode>
     <AppContainer>
+    <TodoColumns>
       <Todo />
       <Done />
+    </TodoColumns>
     </AppContainer>
   </React.StrictMode>,
   document.getElementById("root")
