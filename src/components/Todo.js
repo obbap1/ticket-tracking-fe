@@ -11,7 +11,6 @@ function Todo() {
       <NewTask />
       {cards.length &&
         cards.map((card, index) => <Card key={index} title={card.title} />)}
-      {console.log(cards.length)}
     </Wrapper>
   );
 }
