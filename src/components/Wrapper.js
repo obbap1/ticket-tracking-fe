@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  height: 500px;
+  height: 1000px;
   width: 30vw;
   padding: 30px 20px;
   margin-top: 10px;
@@ -29,6 +29,7 @@ export const Heading = styled.div`
   margin-bottom: 24px;
   text-shadow: 2px -2px 6px #333;
 `;
+
 function Wrapper({ heading, children }) {
   return (
     <Container>

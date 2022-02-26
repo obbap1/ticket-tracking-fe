@@ -3,6 +3,7 @@ import Wrapper from './Wrapper'
 
 const cards = [
   {title: 'play game'},
+  {title: 'play game 2'},
 ]
 
 function Done() {
