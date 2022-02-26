@@ -86,10 +86,8 @@ export default function NewTask() {
     setClose(!close);
   };
 
-  const handleTask = () => {
-    newCards(card.push({ title: "kelvin" }));
-  };
-  console.log(card);
+  const handleTask = () => {};
+  
   return (
     <Wrapper>
       <AddTask addProp={close}>
