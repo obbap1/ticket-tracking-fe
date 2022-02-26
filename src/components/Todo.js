@@ -9,7 +9,7 @@ const cards = [
 ]
 function Todo() {
   return <Wrapper heading="TODO">
-    {cards.length && cards.map((card, index) => <Card key={index} title={card.title}/>)}
+    {cards.length && cards.map((card, index) => <Card key={index} title={card.title} heading='todo'/>)}
   </Wrapper>
 }
 
