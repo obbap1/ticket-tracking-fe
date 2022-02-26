@@ -9,18 +9,16 @@ export const cards = [
   { title: "eat food" },
 ];
 const AddTask = styled.div`
-  padding: 4px;
-  display: ${(props) => (props.addProp ? "flex" : "none")};
+  display: ${(props) => (props.addProp ? "block" : "none")};
   transition: ease-in-out 2s;
   flex-direction: column;
-  width: fit-content;
-  gap: 10px;
+  width: -webkit-fill-available;
   /* width: 90%; */
-  width: auto;
+  width: -webkit-fill-available;
   justify-content: center;
   align-items: center;
-  margin: 10px;
   border-radius: 5px;
+  transition: ease 2s;
 `;
 const Title = styled.div`
   display: flex;
@@ -32,8 +30,9 @@ const TitleInput = styled.input`
   outline: none;
   font-weight: 600;
   border: none;
+
   padding: 0.5em;
-  margin: 0.2em;
+  margin: 0.2em 1.5em;
   color: ${(props) => props.inputColor || "inherit"};
   background: inherit;
   border: none;
@@ -45,6 +44,10 @@ const DescriptionInput = styled(TitleInput)`
 `;
 const Buttons = styled.div`
   display: flex;
+  width: inherit;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
 `;
 const AddButton = styled.button`
   background: ${(props) => (props.primary ? "#031956" : "#031956")};
@@ -67,10 +70,14 @@ const ShowAdd = styled(AddButton)`
   justify-items: center;
   width: -webkit-fill-available;
   &:hover {
-    transition: ease 0.84s;
+    transition: ease 0.9s;
     opacity: 0.8;
     padding: 3px;
   }
+`;
+const Wrapper = styled.div`
+  display: flex;
+  width: 100%;
 `;
 export default function NewTask() {
   const [card, newCards] = useState(cards);
@@ -84,12 +91,11 @@ export default function NewTask() {
   };
   console.log(card);
   return (
-    <div>
+    <Wrapper>
       <AddTask addProp={close}>
         <Title>
           <TitleInput placeholder="Task" type="text" />
         </Title>
-
         <Buttons>
           <AddButton>Add</AddButton>
           <CancelButton onClick={() => handleClose()}>Cancel</CancelButton>
@@ -98,6 +104,6 @@ export default function NewTask() {
       <ShowAdd onClick={() => handleClose()} addProp2={close}>
         <div onClick={handleTask}>+</div>
       </ShowAdd>
-    </div>
+    </Wrapper>
   );
 }
